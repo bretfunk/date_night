@@ -190,20 +190,4 @@ class NodeTest < Minitest::Test
     result = test.min
     assert_equal(0.000000001, result)
   end
-
-  def test_sort_head
-    test = Node.new(25, "JAWS")
-    result = test.sort
-    assert_equal([{25 =>"JAWS"}], result)
-  end
-
-  def test_sort_full
-    skip
-    test = Node.new(25, "JAWS")
-    test2 = test.insert(2, "Aladin")
-    test3 = test.insert(5, "Hackers")
-    result = test.sort
-    assert_equal([{2 => "Aladin"}, {5 => "Hackers"}, {25 => "JAWS"}], result)
-  end
-
 end

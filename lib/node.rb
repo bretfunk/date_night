@@ -6,8 +6,6 @@ class Node
     @title  = title
     @left   = left
     @right  = right
-    @array = []
-    @data = {@rating => @title}
   end
 
   def insert(add_rating, add_title)
@@ -68,26 +66,5 @@ class Node
     elsif num > rating && left.nil?
       rating
     end
-  end
-
-  def move(num=0)
-    if num > rating && !right.nil?
-      @right.move(num)
-    elsif num < rating && !left.nil?
-      @left.move(num)
-    end
-  end
-
-  def sort
-    1..100.times do |num|
-      if num > rating && !right.nil?
-        @right.move(num)
-      elsif num < rating && !left.nil?
-        @left.move(num)
-      elsif num == rating
-        @array << @data
-      end
-    end
-      p @array
   end
 end
