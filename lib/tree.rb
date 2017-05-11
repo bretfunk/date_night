@@ -30,4 +30,8 @@ class BinarySearchTree
   def min
     @head.min
   end
+
+  def load(file)
+    @head.loadz(file)
+  end
 end

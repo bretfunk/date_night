@@ -190,4 +190,26 @@ class NodeTest < Minitest::Test
     result = test.min
     assert_equal(0.000000001, result)
   end
+
+  def test_load
+    #the method is called loadz in node.rb due to a private method error.  The method is still 'load' in the tree.rb file as per instructions.
+    test = Node.new(25, "JAWS")
+    test2 = test.loadz('./test/movies.txt')
+    result = test.include?(71)
+    assert_equal(true, result)
+  end
+
+  def test_new_load
+    test = Node.new(25, "JAWS")
+    test2 = test.loadz('./test/movies.txt')
+    result = test.include?(80)
+    assert_equal(true, result)
+  end
+
+  def test_new_new_load
+    test = Node.new(25, "JAWS")
+    test2 = test.loadz('./test/movies.txt')
+    result = test.include?(17)
+    assert_equal(true, result)
+  end
 end

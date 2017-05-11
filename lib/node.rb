@@ -67,4 +67,14 @@ class Node
       rating
     end
   end
+
+  def loadz(file)
+    loaded = 0
+    import_file = File.open(file, 'r')
+      import_file.each do |line|
+        insert(line.split(", ")[0].to_i, line.split(", ")[1].to_s.chomp)
+        loaded += 1
+    end
+    puts loaded
+  end
 end
